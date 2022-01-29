@@ -48,7 +48,7 @@ brew upgrade
 
 # Install iTerm2
 echo "Installing iTerm2..."
-brew cask install iterm2
+brew install --cask iterm2
 
 # Update the Terminal
 # Install oh-my-zsh
