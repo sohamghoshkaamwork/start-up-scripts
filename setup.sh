@@ -26,7 +26,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true# Enable tap-to-click
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Enable tap-to-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
