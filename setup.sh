@@ -25,17 +25,26 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show Status Bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
+# Show filename extensions by default
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true# Enable tap-to-click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Set fast key repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# install xcode CLI
+xcode-select —-install
+
 # Check for Homebrew, and then install it
 if test ! "$(which brew)"; then
     echo "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo "Homebrew installed successfully"
 else
     echo "Homebrew already installed!"
 fi
 
-# Install XCode Command Line Tools
-echo 'Checking to see if XCode Command Line Tools are installed...'
 brew config
 
 # Updating Homebrew.
@@ -77,11 +86,6 @@ else
     echo "Ruby already installed!"
 fi
 
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install nmap
-
-# Install other useful binaries.
-brew install speedtest_cli
 
 # Core casks
 brew cask install --appdir="/Applications" alfred
