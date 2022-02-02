@@ -90,16 +90,16 @@ fi
 
 
 PACKAGES=(
-    git
-    tmux
-    bat
-    macvim
-    mysql
-    fzf
-    ctags
+    "git"
+    "tmux"
+    "bat"
+    "macvim"
+    "mysql"
+    "fzf"
+    "ctags"
 )
 
-echo "Installing packages..."
+echo "Installing packages... "
 brew install ${PACKAGES[@]}
 
 echo "Cleaning up..."
