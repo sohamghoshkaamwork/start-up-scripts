@@ -89,6 +89,32 @@ else
 fi
 
 
+PACKAGES=(
+    git
+    tmux
+    bat
+    macvim
+    mysql
+    fzf
+    ctags
+)echo "Installing packages..."
+brew install ${PACKAGES[@]}
+
+echo "Cleaning up..."
+brew cleanup
+
+echo "Installing cask..."CASKS=(
+    iterm2
+    adobe-acrobat-reader
+    slack
+    visual-studio-code
+    steam
+    evernote
+    1password
+    macdown
+)echo "Installing cask apps..."
+brew cask install ${CASKS[@]}
+
 # Core casks
 brew cask install --appdir="/Applications" alfred
 
