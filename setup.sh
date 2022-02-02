@@ -97,7 +97,9 @@ PACKAGES=(
     mysql
     fzf
     ctags
-)echo "Installing packages..."
+)
+
+echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 echo "Cleaning up..."
@@ -112,20 +114,12 @@ echo "Installing cask..."CASKS=(
     evernote
     1password
     macdown
-)echo "Installing cask apps..."
+    firefox
+    caffeine
+)
+
+echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
-
-# Core casks
-brew cask install --appdir="/Applications" alfred
-
-# Development tool casks
-brew cask install --appdir="/Applications" visual-studio-code
-
-# Misc casks
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" 1password
-brew cask install --appdir="/Applications" caffeine
 
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
