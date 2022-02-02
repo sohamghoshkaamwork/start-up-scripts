@@ -57,10 +57,6 @@ brew update
 echo "Upgrading Homebrew..."
 brew upgrade
 
-# Install iTerm2
-echo "Installing iTerm2..."
-brew install --cask iterm2
-
 # Update the Terminal
 # Install oh-my-zsh
 echo "Installing oh-my-zsh..."
@@ -105,17 +101,18 @@ brew install ${PACKAGES[@]}
 echo "Cleaning up..."
 brew cleanup
 
-echo "Installing cask..."CASKS=(
-    iterm2
-    adobe-acrobat-reader
-    slack
-    visual-studio-code
-    steam
-    evernote
-    1password
-    macdown
-    firefox
-    caffeine
+echo "Installing cask..."
+
+CASKS=(
+    "iterm2"
+    "adobe-acrobat-reader"
+    "brave-browser"
+    "visual-studio-code"
+    "joplin"
+    "keepassx"
+    "macdown"
+    "firefox"
+    "caffeine"
 )
 
 echo "Installing cask apps..."
