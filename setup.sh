@@ -110,7 +110,7 @@ CASKS=(
     "visual-studio-code"
     "joplin"
     "keepassx"
-    "macdown"
+    # "macdown"
     "firefox"
     "caffeine"
 )
