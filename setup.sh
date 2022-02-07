@@ -116,7 +116,7 @@ CASKS=(
 )
 
 echo "Installing cask apps..."
-brew install --cask ${CASKS[@]}
+brew install --cask --appdir="/Applications" ${CASKS[@]}
 
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
