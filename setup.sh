@@ -121,19 +121,19 @@ CASKS=(
 echo "Installing cask apps..."
 brew install --cask --appdir="/Applications" ${CASKS[@]}
 
-MacApplicationToolList=(
-    409183694 # Keynote
-    409203825 # Numbers
-    409201541 # Pages
-    497799835 # Xcode
-    1450874784 # Transporter
-    1274495053 # Microsoft To Do
-    1295203466 # Microsoft Remote Desktop 10
-    985367838 # Microsoft Outlook
-)
-if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
-    brew install mas
-    mas install ${MacApplicationToolList[@]}
+# MacApplicationToolList=(
+#     409183694 # Keynote
+#     409203825 # Numbers
+#     409201541 # Pages
+#     497799835 # Xcode
+#     1450874784 # Transporter
+#     1274495053 # Microsoft To Do
+#     1295203466 # Microsoft Remote Desktop 10
+#     985367838 # Microsoft Outlook
+# )
+# if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
+#     brew install mas
+#     mas install ${MacApplicationToolList[@]}
 
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
