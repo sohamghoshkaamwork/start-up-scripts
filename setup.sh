@@ -113,6 +113,9 @@ CASKS=(
     # "macdown"
     "firefox"
     "caffeine"
+    "mjolnir"
+    "hammerspoon"
+    # "spectacle"
 )
 
 echo "Installing cask apps..."
