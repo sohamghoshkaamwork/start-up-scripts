@@ -133,9 +133,20 @@ MacApplicationToolList=(
 )
 
 echo ${MacApplicationToolList[@]}
-# if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
-#     brew install mas
-#     mas install ${MacApplicationToolList[@]}
+
+if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
+    brew install mas
+    mas install ${MacApplicationToolList[@]}
+
+    echo "######### Save screenshots to ${HOME}/Pictures/Screenshots"
+    defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
+
+    echo "######### Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF"
+    defaults write com.apple.screencapture type -string "png"
+
+else
+    echo No
+fi
 
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
