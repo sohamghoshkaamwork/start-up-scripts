@@ -93,6 +93,7 @@ PACKAGES=(
     "mysql"
     "fzf"
     "ctags"
+    "mactex-no-gui"
 )
 
 echo "Installing packages... "
