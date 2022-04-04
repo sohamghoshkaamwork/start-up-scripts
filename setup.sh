@@ -93,7 +93,7 @@ PACKAGES=(
     "mysql"
     "fzf"
     "ctags"
-    "mactex-no-gui"
+    "mosh"
 )
 
 echo "Installing packages... "
@@ -106,7 +106,6 @@ echo "Installing cask..."
 
 CASKS=(
     "iterm2"
-    "adobe-acrobat-reader"
     "brave-browser"
     "visual-studio-code"
     "joplin"
@@ -127,8 +126,8 @@ MacApplicationToolList=(
     409203825 # Numbers
     409201541 # Pages
     497799835 # Xcode
-    1450874784 # Transporter
-    1274495053 # Microsoft To Do
+    # 1450874784 # Transporter
+    # 1274495053 # Microsoft To Do
     1295203466 # Microsoft Remote Desktop 10
     985367838 # Microsoft Outlook
 )
