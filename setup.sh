@@ -120,7 +120,15 @@ CASKS=(
 )
 
 echo "Installing cask apps..."
-brew install --cask --appdir="/Applications" ${CASKS[@]}
+
+
+while ((${#CASKS[@]}))
+do
+    CASK=${CASKS[0]}
+    brew list $CASK || brew install --cask --appdir="/Applications" $CASK 
+    brew list $CASK && CASKS=("${CASKS[@]:1}")
+    brew list $CASK || echo $CASK "not installed"
+done
 
 MacApplicationToolList=(
     409183694 # Keynote
@@ -136,7 +144,26 @@ MacApplicationToolList=(
 echo ${MacApplicationToolList[@]}
 
 brew install mas
-mas install ${MacApplicationToolList[@]}
+
+inMasList () {
+
+    if ( mas list | grep -q $1 ) then {
+        return 0
+    }
+    else {
+        return 1
+    }
+    fi
+}
+
+while ((${#MacApplicationToolList[@]}))
+do
+    MacApplicationTool=${MacApplicationToolList[0]}
+    inMasList $MacApplicationTool || mas install $MacApplicationTool 
+    inMasList $MacApplicationTool && MacApplicationToolList=("${MacApplicationToolList[@]:1}")
+    inMasList $MacApplicationTool || echo $MacApplicationTool "not installed"
+done
+
 
 echo "######### Save screenshots to ${HOME}/Pictures/Screenshots"
 defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
