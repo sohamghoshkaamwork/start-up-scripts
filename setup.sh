@@ -37,7 +37,7 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # install xcode CLI
-xcode-select —-install
+xcode-select --install
 
 # Check for Homebrew, and then install it
 if test ! "$(which brew)"; then
