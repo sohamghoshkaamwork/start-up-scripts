@@ -38,6 +38,12 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+echo "######### Save screenshots to ${HOME}/Pictures/Screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
+
+echo "######### Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF"
+defaults write com.apple.screencapture type -string "png"
+
 # install xcode CLI
 xcode-select --install
 
@@ -59,23 +65,6 @@ brew update
 # Upgrade any already-installed formulae.
 echo "Upgrading Homebrew..."
 brew upgrade
-
-# Update the Terminal
-# Install oh-my-zsh
-echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo "Need to logout now to start the new SHELL..."
-logout
-
-# Install Git
-echo "Installing Git..."
-brew install git
-
-# Install Powerline fonts
-echo "Installing Powerline fonts..."
-git clone https://github.com/powerline/fonts.git
-cd fonts || exit
-sh -c ./install.sh
 
 # Install ruby
 if test ! "$(which ruby)"; then
@@ -166,12 +155,18 @@ do
     inMasList $MacApplicationTool || echo $MacApplicationTool "not installed"
 done
 
+# Update the Terminal
+# Install oh-my-zsh
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "Need to logout now to start the new SHELL..."
+logout
 
-echo "######### Save screenshots to ${HOME}/Pictures/Screenshots"
-defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
-
-echo "######### Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF"
-defaults write com.apple.screencapture type -string "png"
+# Install Powerline fonts
+echo "Installing Powerline fonts..."
+git clone https://github.com/powerline/fonts.git
+cd fonts || exit
+sh -c ./install.sh
 
 
 # Remove outdated versions from the cellar.
