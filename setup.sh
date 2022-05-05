@@ -98,16 +98,16 @@ echo "Installing cask..."
 
 CASKS=(
     "iterm2"
-    "brave-browser"
-    "visual-studio-code"
-    "joplin"
-    "keepassx"
-    "macdown"
-    "firefox"
-    "caffeine"
-    "mjolnir"
-    "hammerspoon"
-    "spectacle"
+    # "brave-browser"
+    # "visual-studio-code"
+    # "joplin"
+    # "keepassx"
+    # "macdown"
+    # "firefox"
+    # "caffeine"
+    # "mjolnir"
+    # "hammerspoon"
+    # "spectacle"
 )
 
 echo "Installing cask apps..."
@@ -122,14 +122,14 @@ do
 done
 
 MacApplicationToolList=(
-    409183694 # Keynote
-    409203825 # Numbers
-    409201541 # Pages
+    # 409183694 # Keynote
+    # 409203825 # Numbers
+    # 409201541 # Pages
     497799835 # Xcode
     # 1450874784 # Transporter
     # 1274495053 # Microsoft To Do
-    1295203466 # Microsoft Remote Desktop 10
-    985367838 # Microsoft Outlook
+    # 1295203466 # Microsoft Remote Desktop 10
+    # 985367838 # Microsoft Outlook
 )
 
 echo ${MacApplicationToolList[@]}
