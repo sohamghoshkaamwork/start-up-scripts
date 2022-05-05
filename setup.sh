@@ -99,7 +99,7 @@ echo "Installing cask..."
 CASKS=(
     "iterm2"
     # "brave-browser"
-    # "visual-studio-code"
+    "visual-studio-code"
     # "joplin"
     # "keepassx"
     # "macdown"
